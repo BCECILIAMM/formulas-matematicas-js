@@ -83,3 +83,62 @@ function calcularCirculo(radio) {
 }
 
 console.groupEnd('CIRCULO');
+
+// TRIANGULO ISOSCELES 
+
+console.group('TRIANGULO ISOSCELES');
+
+function cacularAlturaTriangulo(lados, base) {
+    if (lados == base) {
+        console.warn('Esto no es un triangulo isosceles');
+    } else {
+        //h = raizCuadrada(lados**2 - (base**2)/4)
+        const altura = Math.sqrt((lados ** 2) - ((base ** 2)) / 4); // MATH.SQRT ES PARA ELEVARLO AL CUADRADO
+        return altura;
+
+    }
+}
+console.groupEnd('TRIANGULO ISOSCELES');
+
+
+console.group('TRIANGULO ESCALENO');
+
+function calcularEscaleno(lado1, lado2, base) {
+
+    if (lado1 == lado2) {
+        console.warn('no es un triangulo escaleno')
+    } else {
+        //h = raizCuadrada((lado2 ** 2) - (lado2**2) + (base **2) / 2* base)
+        const altura = Math.sqrt((lado2 ** 2) - (lado1 ** 2) + (base ** 2) / (2 * base));
+        return altura;
+    }
+
+
+}
+
+export function solution(lado1, lado2, lado3) {
+
+    let a = lado1;
+    let b = lado2;
+    let c = lado3;
+
+    // Si no es escaleno, no continuamos
+    if (a == b || b == c || c == a) {
+        return false;
+    }
+
+    // Si es escaleno, calculamos primero su area
+    let s = (a + b + c) / 2;
+    let area = Math.sqrt(s * (s - a) * (s - b) * (s - c));
+
+    // Ahora usamos que A = bh/2, por lo que h = 2A/b
+    let altura_a = Math.floor(2 * area / a);
+    let altura_b = Math.floor(2 * area / b);
+    let altura_c = Math.floor(2 * area / c);
+
+    // IMPTE: No se especifica cual de las alturas se quiere, tras probar el codigo conclui que se busca la altura respecto a 'a' como base
+    return altura_a;
+
+}
+
+console.groupEnd('TRIANGULO ESCALENO');

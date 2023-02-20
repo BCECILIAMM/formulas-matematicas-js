@@ -1,0 +1,7 @@
+.shadow {
+    box-shadow: 2.2px 1.2px 2.7px rgba(0, 0, 0, 0.11), 4.9px 2.8px 6.1px rgba(0, 0, 0, 0.084), 8.5px 4.8px 10.6px rgba(0, 0, 0, 0.072), 13.5px 7.6px 16.9px rgba(0, 0, 0, 0.063), 20.9px 11.8px 26.1px rgba(0, 0, 0, 0.055), 32.6px 18.4px 40.7px rgba(0, 0, 0, 0.047), 54.1px 30.5px 67.6px rgba(0, 0, 0, 0.038), 108px 61px 135px rgba(0, 0, 0, 0.026);
+}
+
+.aling {
+    align-items: center;
+}
